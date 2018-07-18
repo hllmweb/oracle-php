@@ -45,7 +45,7 @@
 	if($query->execute()):
 		while($row = $query->fetch()):
 		//$total = count($row);
-			echo "<a href='editar.php?ID={$row["IDUSUARIO"]}'>{$row["IDUSUARIO"]} - {$row["NOME"]}</a><br>";
+			echo "<a href='editar.php?ID={$row["IDUSUARIO"]}'>{$row["IDUSUARIO"]} - {$row["NOME"]}</a> <a href='editar.php?ID={$row["IDUSUARIO"]}'>Editar</a> | <a href='deletar.php?ID={$row["IDUSUARIO"]}'>Deletar</a><br>";
 		endwhile;
 	
 	endif;
