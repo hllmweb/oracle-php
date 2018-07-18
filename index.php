@@ -29,7 +29,7 @@
 	$name = "xe";
 	$host = "localhost";
  	
- 	$tns = " (DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP) (HOST = ".$host.")(PORT = 1521)))(CONNECT_DATA = (SID = ".$name.")))";
+ 	$tns = "(DESCRIPTION =(ADDRESS_LIST =(ADDRESS = (PROTOCOL = TCP) (HOST = ".$host.")(PORT = 1521)))(CONNECT_DATA = (SID = ".$name.")))";
 	$pdo = new PDO("oci:dbname=".$tns,$user,$pass);
 
 	if(!$pdo):
@@ -45,7 +45,7 @@
 	if($query->execute()):
 		while($row = $query->fetch()):
 		//$total = count($row);
-			echo $row["IDUSUARIO"]." - ".$row["NOME"]."<br>";
+			echo "<a href='editar.php?ID={$row["IDUSUARIO"]}'>{$row["IDUSUARIO"]} - {$row["NOME"]}</a><br>";
 		endwhile;
 	
 	endif;
