@@ -22,6 +22,7 @@
 	$query = $pdo->query("SELECT * FROM USUARIOS WHERE IDUSUARIO = {$IDUSUARIO}");
 	$query->execute();
 	$row = $query->fetch();
+	$NOME = $row["NOME"];
 	
 	if($_POST && @$_GET["acao"] == "editar"):
 		$NOME = $_POST["NOME"];
@@ -37,8 +38,7 @@
 <form action="editar.php?acao=editar&ID=<?= $IDUSUARIO; ?>" method="post">
 	<label for="NOME">
 		<strong>Nome</strong>
-		<input type="text" name="NOME" value="<?= $row["NOME"]; ?>" placeholder="Nome">
+		<input type="text" name="NOME" value="<?= $NOME; ?>" placeholder="Nome">
 	</label>
 	<button type="submit">Atualizar</button>
-
 </form>

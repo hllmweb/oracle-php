@@ -53,3 +53,5 @@
 
 	//
 ?>
+
+<a href="adicionar.php">Adicionar</a>
